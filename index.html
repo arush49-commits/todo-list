@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Daymark — a calmer to-do list</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daymark home"><span class="brand-mark">d.</span> daymark</a>
+      <span class="today" id="today"></span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR SPACE TO FOCUS</p>
+      <h1>Make room for<br><span>what matters.</span></h1>
+      <p class="intro-copy">A little progress is still progress. Start where you are.</p>
+    </section>
+
+    <section class="todo-card" aria-labelledby="list-title">
+      <div class="card-heading">
+        <div>
+          <p class="eyebrow">THE PLAN</p>
+          <h2 id="list-title">Today's tasks</h2>
+        </div>
+        <span class="task-count" id="task-count" aria-live="polite">0 left</span>
+      </div>
+
+      <form class="add-form" id="add-form">
+        <label class="sr-only" for="task-input">Add a task</label>
+        <input id="task-input" name="task" type="text" maxlength="120" placeholder="What needs your attention?" autocomplete="off" required>
+        <button type="submit" aria-label="Add task">+</button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="active" aria-pressed="false">In progress</button>
+        <button type="button" class="filter" data-filter="completed" aria-pressed="false">Completed</button>
+      </div>
+
+      <ul class="task-list" id="task-list" aria-live="polite"></ul>
+      <p class="empty-state" id="empty-state">Your list is clear. Add one small thing to get started.</p>
+      <footer class="card-footer"><span>One thing at a time.</span><button type="button" id="clear-completed" class="text-button">Clear completed</button></footer>
+    </section>
+    <p class="page-note">A softer way to get things done <span aria-hidden="true">✳</span></p>
+  </main>
+</body>
+</html>
